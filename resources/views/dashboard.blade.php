@@ -1,10 +1,18 @@
 <x-app-layout>
+
+
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
 
+
+   <div class="container my-3 p-3 mx-auto">
+    <a href="{{route('foodList')}}" class="text-white p-3 bg-slate-700">Food List</a>
+    <a href="{{route('create.food')}}" class="text-blue-400 p-3 bg-slate-700">Create Food</a>
+   </div>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">

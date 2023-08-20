@@ -23,6 +23,8 @@ Route::get('deleteFood/{id}',[\App\Http\Controllers\MainController::class,'delet
 Route::get('foodDetail/{id}',[\App\Http\Controllers\MainController::class,'viewDetail'])->name('foodDetail');
 Route::get('create/food',[\App\Http\Controllers\MainController::class,'create'])->name('create.food');
 Route::post('store/food',[\App\Http\Controllers\MainController::class,'store'])->name('store.food');
+Route::get('foodDeatils/{id}/edit',[\App\Http\Controllers\MainController::class,'viewEdit'])->name('edit.food');
+Route::post('foodDeatils/{id}/edit',[\App\Http\Controllers\MainController::class,'edit'])->name('edit.food.now');
 
 Route::get('/home',function (){
     return 'welcome peshin';

@@ -11,20 +11,17 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="container">
-    <h2>Food List</h2>
-    @foreach($foods as $food)
-    <div class="card bg-info text-white">
-        <div class="card-body " style="padding: 0.5em!important;margin: 0.5em!important;">
-            {{$food->name}}
-            <a href="{{route('deletefood',$food->id)}}" class="btn btn-danger">Delete Food</a>
-            <a href="{{route('foodDetail',$food->id)}}" class="btn btn-success">View Food Detail</a>
-            <a href="{{route('edit.food',$food->id)}}" class="btn btn-primary">Edit Food Detail</a>
-        </div>
-    </div>
-    @endforeach
+<div>
+    <br>
+    <form action="{{route('edit.food.now',$food->id)}}" method="POST" class="container">
+        @csrf
+        <input type="text" value="{{$food->name}}" name="name" class="form-control">
+        <br>
+        <input type="text" value="{{$food->price}}" name="price" class="form-control">
+        <br>
+        <button class="btn btn-primary">Update</button>
+    </form>
 </div>
-
-
 </body>
+
 </html>

@@ -25,6 +25,19 @@ class MainController extends Controller
         return view('foodDetail',compact('food'));
     }
 
+    public function viewEdit($id){
+        $food=Food::findorfail($id);
+        return view('foodEdit',compact('food'));
+    }
+
+    public function edit(Request $request,$id){
+       $food = Food::findorfail($id);
+       $food->name = $request->name;
+       $food->price=$request->price;
+       $food->save();
+       return redirect()->route('foodList');
+
+    }
     public function delete($id)
     {
         $food=Food::find($id);  // = select * from food where id = ?
